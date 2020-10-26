@@ -47,7 +47,6 @@ type floatEncoder int   // 位数
 // 编码浮点数字段
 func (bits floatEncoder) encode(e *encodeState, v reflect.Value, opts encodeConfig) {
 	f := v.Float()  // 获取浮点数的值到f
-
 	if math.IsInf(f, 0) || math.IsNaN(f) {
 		panic("unsupportedValueType")   // 数据类型不支持
 	}
@@ -55,7 +54,6 @@ func (bits floatEncoder) encode(e *encodeState, v reflect.Value, opts encodeConf
 	b := e.scratch[:0]  // 空切片
 	a := math.Abs(f)  // 获取浮点数的绝对值
 	fmt := byte('f')
-
 	if a!=0 && bits == 64 && (a < 1e-6 || a >= 1e21) || bits == 32 && (float32(a) < 1e-6 || float32(a) >= 1e21) {
 		fmt = 'e'
 	}
@@ -486,7 +484,6 @@ var safeSet = [utf8.RuneSelf]bool{
 // 十六進制数
 var hex = "0123456789abcdef"
 
-// NOTE: keep in sync with stringBytes below.
 func (e *encodeState) string(s string, escapeHTML bool) {
 	e.WriteByte('"')
 	start := 0
@@ -816,8 +813,11 @@ func equalFoldRight(s, t []byte) bool {
 }
 
 // HTMLEscape 实现标准HTML转义
+//
 // 将json编码的src中的<、>、&、U+2028 和U+2029字符替换为\u003c、\u003e、\u0026、\u2028、\u2029 转义字符串，
+//
 // 以便json编码可以安全的嵌入HTML的<script>标签里
+//
 // 网络浏览器不支持在<script>标签中使用标准HTML转义
 func HTMLEscape(dst *bytes.Buffer, src []byte) {
 	start := 0
