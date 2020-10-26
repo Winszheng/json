@@ -25,7 +25,6 @@ func TestJsonMarshal(t *testing.T) {
 	type args struct {
 		v interface{}
 	}
-
 	// initial cases
 	m2 := "youth is wasted on the young"
 	c2, _ := json2.Marshal(m2)
