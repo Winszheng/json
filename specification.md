@@ -147,15 +147,15 @@ func TestJsonMarshal(t *testing.T) {
 
 ##### 测试结果
 
-![image-20201026222037172](/home/wucp/git/json/img/image-20201026222037172.png)
+![image-20201026222037172](img/image-20201026222037172.png)
 
 可见符合要求。
 
 #### 1.3 整体单元测试效果
 
-![image-20201026232248956](/home/wucp/git/json/img/image-20201026232248956.png)
+![image-20201026232248956](img/image-20201026232248956.png)
 
-![image-20201026232308589](/home/wucp/git/json/img/image-20201026232308589.png)
+![image-20201026232308589](img/image-20201026232308589.png)
 
 可见测试符合要求。
 
@@ -185,7 +185,7 @@ func BenchmarkJsonMarshal(b *testing.B) {
 
 测试结果：
 
-![image-20201026223642239](/home/wucp/.config/Typora/typora-user-images/image-20201026223642239.png)
+![image-20201026223642239](img/image-20201026223642239.png)
 
 可以看出，后者所费时间比前者多一个量级，循环次数却前者少一个量级。如果是在实际工程中，json的处理优化可能是需要关注的点。
 
@@ -252,7 +252,7 @@ func main()  {
 
 结果可见符合要求：
 
-![image-20201027102222976](/home/wucp/git/json/img/image-20201027102222976.png)
+![image-20201027102222976](img/image-20201027102222976.png)
 
 # 三、使用案例
 
@@ -310,4 +310,4 @@ func main()  {
 
 #### 应有的执行结果
 
-![image-20201027102638822](/home/wucp/git/json/img/image-20201027102638822.png)
+![image-20201027102638822](img/image-20201027102638822.png)
